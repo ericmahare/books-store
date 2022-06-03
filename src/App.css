@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&family=Square+Peg&display=swap');
+
 * {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -10,8 +11,9 @@
   --main-blue: #0290ff;
   --cool-blue: #4386bf;
 }
+
 body {
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   background-color: #d3d3d3;
 }
@@ -49,6 +51,7 @@ body {
 .nav-link a {
   text-decoration: none;
 }
+
 /* end of navigation section */
 
 /* book section */
@@ -76,7 +79,7 @@ body {
 
 .book-info {
   color: var(--cool-blue);
-  font-size:0.9rem;
+  font-size: 0.9rem;
 }
 
 .chapter {
@@ -92,10 +95,13 @@ body {
   background-color: var(--main-blue);
   cursor: pointer;
 }
+
 /* end of book section */
 
 /* form section */
-input, select, .form-btn {
+input,
+select,
+.form-btn {
   padding: 8px;
   border: none;
   outline: none;
@@ -114,7 +120,8 @@ input {
   width: 47vw;
 }
 
-select, .form-btn {
+select,
+.form-btn {
   width: 15vw;
 }
 
@@ -124,6 +131,7 @@ select, .form-btn {
   text-transform: uppercase;
   cursor: pointer;
 }
+
 /* end of form section */
 
 /* categories section */
@@ -134,4 +142,5 @@ select, .form-btn {
   background-color: var(--main-blue);
   cursor: pointer;
 }
+
 /* end of categories section */
