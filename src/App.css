@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&family=Square+Peg&display=swap');
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-white: #fff;
+  --main-blue: #0290ff;
+  --cool-blue: #4386bf;
+}
+body {
+  font-family: 'Roboto',sans-serif;
+  font-size: 18px;
+  background-color: #d3d3d3;
+}
+
+.container {
+  width: 80vw;
+  margin: 20px auto;
+}
+
+/* navigation section */
+
+.navbar {
+  background-color: var(--main-white);
+  padding: 0 8.8rem;
+}
+
+.nav-list {
+  list-style-type: none;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.heading a {
+  font-size: 1.7rem;
+  color: var(--main-blue);
+  font-weight: bold;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link a {
+  text-decoration: none;
+}
+/* end of navigation section */
+
+/* book section */
+.book {
+  background-color: var(--main-white);
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  margin: 1rem 0;
+}
+
+.article-footer {
+  display: flex;
+  column-gap: 12px;
+  margin-top: 15px;
+  color: var(--cool-blue);
+  font-size: 0.9rem;
+}
+
+.article-footer span {
+  cursor: pointer;
+}
+
+.book-info {
+  color: var(--cool-blue);
+  font-size:0.9rem;
+}
+
+.chapter {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.book-btn {
+  padding: 8px 15px;
+  text-transform: uppercase;
+  color: var(--main-white);
+  border: 0;
+  background-color: var(--main-blue);
+  cursor: pointer;
+}
+/* end of book section */
+
+/* form section */
+input, select, .form-btn {
+  padding: 8px;
+  border: none;
+  outline: none;
+  margin-right: 12px;
+}
+
+.form-section {
+  margin-top: 4rem;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+input {
+  width: 47vw;
+}
+
+select, .form-btn {
+  width: 15vw;
+}
+
+.form-btn {
+  background-color: var(--main-blue);
+  color: var(--main-white);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+/* end of form section */
+
+/* categories section */
+.cat-btn {
+  padding: 8px;
+  border: none;
+  color: var(--main-white);
+  background-color: var(--main-blue);
+  cursor: pointer;
+}
+/* end of categories section */
