@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Math Magician
+# Bookstore
 
-> This is a React app for performing mathematics calculations.
+> This is a React app for managing user's favourite books
 
 ## Built With
 
@@ -10,19 +10,17 @@
 
 ## Live Demo
 
-[Netlify Live Demo](https://math-magician-erik.netlify.app/)
-
-[heroku live demo](https://math-magician-erik.herokuapp.com/)
+No live demo
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-- copy this link `https://github.com/ericmahare/math-magician.git`.
+- copy this link `https://github.com/ericmahare/books-store.git`.
 - get the directory that you want to clone the repository.
 - open the command prompt in this directory.
-- write `git clone https://github.com/ericmahare/math-magician.git`.
-- go to the repository folder in your command prompt `cd math-magician`
+- write `git clone https://github.com/ericmahare/books-store.git`.
+- go to the repository folder in your command prompt `cd books-store`
 - write `npm install` to install all the packages.
 - write `npm start` to start the live server.
 
