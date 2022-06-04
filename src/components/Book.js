@@ -1,14 +1,15 @@
-const Book = () => {
+const Book = ({book}) => {
+  const {title, author} = book
   return (
     <article className='book'>
       <div>
         <h5>Action</h5>
-        <h3>The Hunger Games</h3>
-        <p className="book-info">Suzanne Collins</p>
+        <h3>{title}</h3>
+        <p className="book-info">{author}</p>
         <div className='article-footer'>
-          <span>Comments |</span>
-          <span>Remove |</span>
-          <span>Edit |</span>
+          <button>Comments |</button>
+          <button>Remove |</button>
+          <button>Edit |</button>
         </div>
       </div>
       <div>
