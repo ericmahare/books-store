@@ -100,7 +100,6 @@ body {
 
 /* form section */
 input,
-select,
 .form-btn {
   padding: 8px;
   border: none;
@@ -117,7 +116,7 @@ form {
 }
 
 input {
-  width: 47vw;
+  width: 30vw;
 }
 
 select,
