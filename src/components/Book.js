@@ -1,5 +1,7 @@
-const Book = ({book}) => {
-  const {title, author} = book
+import { connect } from "react-redux"
+import { removeBook } from "../redux/books/books"
+const Book = ({book, dispatch}) => {
+  const {id,title, author} = book
   return (
     <article className='book'>
       <div>
@@ -8,7 +10,7 @@ const Book = ({book}) => {
         <p className="book-info">{author}</p>
         <div className='article-footer'>
           <button>Comments |</button>
-          <button>Remove |</button>
+          <button onClick={()=>dispatch(removeBook(id))}>Remove |</button>
           <button>Edit |</button>
         </div>
       </div>
@@ -20,5 +22,4 @@ const Book = ({book}) => {
     </article>
   )
 }
-
-export default Book
+export default connect()(Book)
