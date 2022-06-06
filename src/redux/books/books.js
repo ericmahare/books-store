@@ -4,17 +4,19 @@ const ADD = 'ADD';
 
 const books = [];
 
-
+// remove books
 export const removeBook = (id) => ({
   type: REMOVE,
   id,
 });
 
+// add books
 export const addBooks = (book) => ({
   type: ADD,
   book,
 })
 
+// books reducer 
 const reducer = (state = books, action) => {
   switch(action.type) {
     case REMOVE:
