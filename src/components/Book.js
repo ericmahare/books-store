@@ -1,7 +1,8 @@
-import { connect } from "react-redux"
+import { useDispatch } from "react-redux"
 import { removeBook } from "../redux/books/books"
-const Book = ({book, dispatch}) => {
+const Book = ({book}) => {
   const {id,title, author} = book
+  const dispatch = useDispatch();
   return (
     <article className='book'>
       <div>
@@ -22,4 +23,4 @@ const Book = ({book, dispatch}) => {
     </article>
   )
 }
-export default connect()(Book)
+export default Book;

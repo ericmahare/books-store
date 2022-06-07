@@ -1,9 +1,10 @@
-import { connect } from "react-redux"
+import { useSelector } from "react-redux"
 import Book from "./Book"
 import Form from "./Form"
 
-const Books = ({ books }) => {
-  let data = books.books.map(book => <Book key={book.id} book={book}/>);
+const Books = () => {
+  const books = useSelector(state => state.books)
+  let data = books.map(book => <Book key={book.id} book={book}/>);
   return (
     <>
       {data}
@@ -11,8 +12,5 @@ const Books = ({ books }) => {
     </>
   )
 }
-const mapStateToProps = (state) => {
-  const books  = state
-  return {books}
-}
-export default connect(mapStateToProps)(Books)
+
+export default Books;
