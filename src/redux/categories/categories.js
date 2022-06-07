@@ -1,4 +1,4 @@
-const CHECK_STATUS = 'CHECKSTATUS'
+const CHECK_STATUS = 'CHECK_STATUS'
 
 export const checkStatus = () => ({
   type: CHECK_STATUS,
