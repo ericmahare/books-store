@@ -1,19 +1,21 @@
 import { useState } from "react"
 import { addBooks } from "../redux/books/books";
 import shortid from 'shortid';
-import { connect } from "react-redux";
-const Form = ({dispatch}) => {
+import { useDispatch } from "react-redux";
+
+const Form = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if(title !== '' && author !== ''){
     const book = {
-      id: shortid.generate(),
+      item_id: shortid.generate(),
       title,
       author,
+      category:'',
     }
     dispatch(addBooks(book));
     setAuthor('')
@@ -31,4 +33,4 @@ const Form = ({dispatch}) => {
     </div>
   )
 }
-export default connect()(Form)
+export default Form;

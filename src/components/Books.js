@@ -1,18 +1,28 @@
-import { connect } from "react-redux"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchBooks } from "../redux/books/books"
 import Book from "./Book"
 import Form from "./Form"
 
-const Books = ({ books }) => {
-  let data = books.books.map(book => <Book key={book.id} book={book}/>);
+const Books = () => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchBooks())
+  },[])
+  const books = useSelector(state => state.books)
   return (
     <>
-      {data}
+      {Object.keys(books).map((id) => (
+        <Book
+          key={id}
+          id={id}
+          title={books[id][0].title}
+          author={books[id][0].author}
+        />
+      ))}
       <Form/>
     </>
   )
 }
-const mapStateToProps = (state) => {
-  const books  = state
-  return {books}
-}
-export default connect(mapStateToProps)(Books)
+
+export default Books;
