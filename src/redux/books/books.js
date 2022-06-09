@@ -1,39 +1,50 @@
 const REMOVE = 'REMOVE';
-const ADD = 'ADD';
+const DISPLAY = 'DISPLAY'
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/W1RT9D7Mwtti9RBvC75J/books'
 
-// initial value
-const books = [
-  {
-    id: 1,
-    title:'The catcher in the Rye',
-    author: 'J.D Salinger'
-  },
-  {
-    id: 2,
-    title: 'The magic of thinking big',
-    author: 'David J.Schartz'
-  }
-];
+const displayData = (book) => ({
+  type: DISPLAY,
+  book
+})
 
-// remove books
+// remove books action
 export const removeBook = (id) => ({
   type: REMOVE,
   id,
 });
 
+// fetch books 
+export const fetchBooks = () => (dispatch) => {
+  fetch(url)
+  .then(res => res.json())
+  .then(data => dispatch(displayData(data)))
+}
 // add books
-export const addBooks = (book) => ({
-  type: ADD,
-  book,
-})
+  export const addBooks =(book) => async  (dispatch) => {
+    await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(book),
+    })
+    .then(()=>dispatch(fetchBooks()))
+ };
+
+ // delete books function
+
+ export const deleteBooks =(id) => async  (dispatch) => {
+  await fetch(`${url}/${id}`, {
+    method: 'DELETE',
+    headers: {'Content-Type': 'application/json' },
+    body: JSON.stringify({id}),
+  })
+  .then(()=>dispatch(fetchBooks()))
+};
 
 // books reducer 
-const reducer = (state = books, action) => {
+const reducer = (state = {}, action) => {
   switch(action.type) {
-    case REMOVE:
-    return state.filter((book) => book.id !== action.id);
-    case ADD:
-    return [...state, action.book]
+    case DISPLAY:
+      return action.book
     default:
       return state;
   }
