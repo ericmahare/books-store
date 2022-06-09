@@ -12,9 +12,10 @@ const Form = () => {
 
     if(title !== '' && author !== ''){
     const book = {
-      id: shortid.generate(),
+      item_id: shortid.generate(),
       title,
       author,
+      category:'',
     }
     dispatch(addBooks(book));
     setAuthor('')
