@@ -1,8 +1,7 @@
-import { useDispatch } from "react-redux"
-import { removeBook } from "../redux/books/books"
-const Book = ({book}) => {
-  const {id,title, author} = book
-  const dispatch = useDispatch();
+import { useDispatch } from "react-redux";
+import { deleteBooks } from "../redux/books/books"
+const Book = ({id, title, author}) => {
+const dispatch = useDispatch();
   return (
     <article className='book'>
       <div>
@@ -11,7 +10,7 @@ const Book = ({book}) => {
         <p className="book-info">{author}</p>
         <div className='article-footer'>
           <button>Comments |</button>
-          <button onClick={()=>dispatch(removeBook(id))}>Remove |</button>
+          <button onClick={()=> dispatch(deleteBooks(id))}>Remove |</button>
           <button>Edit |</button>
         </div>
       </div>
